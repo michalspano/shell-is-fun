@@ -1,0 +1,6 @@
+# Ignore defualt .sh files
+instruct.sh
+script.sh
+
+# Ignore assets
+src/read-file/creds.txt
