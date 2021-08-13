@@ -2,8 +2,6 @@
 
 [![Stargazers][stars-shield]][stars-url]
 
-***
-
 The main objective of this repositery is to share fun shell projects and encourage others to try __shell scripting__ on their own. 
 
 ### Bourne shell
