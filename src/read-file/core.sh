@@ -13,15 +13,14 @@ function main()
 # Function to validate the user provided path
 function validatePath()
 {
-    echo "$1"
-    if [ -e "$1" ]
+    if [ -e "$PATH" ]
     then
         # Prompt the user with message and continue to read the file
-        printf "$PATH exists.\n"
-        READFILE $1
+        printf "\n$PATH exists.\n"
+        READFILE $PATH
     else
         # Promp the user with a message and abort the reading 
-        printf "$1 does not exist.\n"
+        printf "\n$PATH does not exist.\n"
     fi
 }
 
@@ -31,10 +30,7 @@ function READFILE()
     LINE=1
 
     # Create empty files to clear the space
-    for _ in {1..15}
-    do
-        printf "\n"
-    done
+    CLEAR
 
     # Start a while loop with the variable containing the contents from the current line
     while read -r CURRENT_LINE
@@ -49,4 +45,13 @@ function READFILE()
     printf "\nFinished!\n"
 }
 
+function CLEAR()
+{
+    for _ in {1..15}
+    do
+        printf "\n"
+    done 
+}
+
+# Call the main function
 main
