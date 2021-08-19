@@ -35,6 +35,12 @@ function MAIN()
             DECORATOR $ID
             COMMIT_PUSH $2
             ;;
+        [aA][+-][cC][+-][pP])
+            ID="Add&Commit&Push"
+            DECORATOR $ID
+            ADD_ALL
+            COMMIT_PUSH $2
+            ;;
         *)
             echo "Usage: ./git.sh 'METHOD'"
             ;;
@@ -72,6 +78,12 @@ function COMMIT_PUSH()
         # Abort the process
         echo "Usage: ./git.sh c-p 'COMMIT_MSG'"
     fi
+}
+
+# Add all existing changes to staging area
+function ADD_ALL()
+{
+    git add .
 }
 
 # Create a decorator function
