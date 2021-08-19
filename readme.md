@@ -69,7 +69,29 @@ Seamlessly commits and pushes changes to a local repositery in a single command.
 $ sh git.sh c-p $COMMIT_MESSAGE
 ```
 
-__NOTE:__ it will be assued that the remote is already __specified__ and changes (to be commited) have been __added__ to the __staging area__.
+__NOTE:__ it this case, it will be assumed that changes (to be commited) have been __added__ to the __staging area__.
+
+### Automated git add & commit & push
+Seamlessly adds all local changes to the staging area, commits changes and pushes changes to a local repositery in a single command.
+
+```Shell
+$ sh git.sh a-c-p $COMMIT_MESSAGE
+```
+
+__Equivalent to:__ <br>
+```Shell
+$ git add .
+```
+
+```Shell
+$ git commit -m '$COMMIT_MESSAGE'
+```
+
+```Shell
+$ git push
+```
+
+__NOTE:__ it will be assued that the remote is already __specified__.
 
 <!-- LINK REFS -->
 [WIKI_LINK]: https://en.wikipedia.org/wiki/Bourne_shell
