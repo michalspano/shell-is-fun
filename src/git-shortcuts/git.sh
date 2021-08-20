@@ -47,7 +47,13 @@ function MAIN()
             ID="Rename commit"
             DECORATOR $ID
             RENAME_COMMIT $2
-            ;; 
+            ;;
+        # Detect config method
+        [cC][oO][nN] | [cC][oO][nN][fF][iI][gG])
+            ID="Config"
+            DECORATOR $ID
+            CONFIG
+            ;;
         *)
             echo "Usage: ./git.sh 'METHOD'"
             ;;
@@ -105,6 +111,13 @@ function RENAME_COMMIT()
         # Abort the process
         echo "Usage: ./git.sh r 'RENAME_MSG'"
     fi
+}
+
+# Check global git config
+function CONFIG()
+{
+    # Opens configs and their locations in vim (by default)
+    git config --list --show-origin
 }
 
 # Create a decorator function
