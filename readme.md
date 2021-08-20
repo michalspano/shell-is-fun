@@ -95,13 +95,21 @@ __NOTE:__ it will be assued that the remote is already __specified__.
 
 ### Automated git rename module
 Rename local commits using a simple command. <br>
-__Remaps__ `git commit --amend -m $RENAME_MESSAGE` to 'rename $RENAME_MESSAGE'
+__Remaps__ `git commit --amend -m $RENAME_MESSAGE` to `rename $RENAME_MESSAGE`
 
 ```Shell
 $ sh git.sh r $RENAME_MESSAGE
 ```
 
 __NOTE:__ it will assumed that a __local commit__ has been created. 
+
+### Git configuration shortcut
+Inspect configuration files and their location in a single command.
+__Remaps__ `git config --list --show-origin` to `con`
+
+```Shell
+$ sh git.sh con
+```
 
 <!-- LINK REFS -->
 [WIKI_LINK]: https://en.wikipedia.org/wiki/Bourne_shell
