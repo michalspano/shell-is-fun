@@ -93,6 +93,16 @@ $ git push
 
 __NOTE:__ it will be assued that the remote is already __specified__.
 
+### Automated git rename module
+Rename local commits using a simple command. <br>
+__Remaps__ `git commit --amend -m $RENAME_MESSAGE` to 'rename $RENAME_MESSAGE'
+
+```Shell
+$ sh git.sh r $RENAME_MESSAGE
+```
+
+__NOTE:__ it will assumed that a __local commit__ has been created. 
+
 <!-- LINK REFS -->
 [WIKI_LINK]: https://en.wikipedia.org/wiki/Bourne_shell
 [stars-shield]: https://img.shields.io/github/stars/michalspano/shell-is-fun.svg?style=for-the-badge
