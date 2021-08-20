@@ -30,17 +30,24 @@ function MAIN()
             LOG
             ;;
         # Detect c&p aka commit-push
-        [cC][_-][pP])
+        [cC][+-][pP])
             ID="Commit&Push"
             DECORATOR $ID
             COMMIT_PUSH $2
             ;;
+        # Detect a&c&p aka add-commit-push
         [aA][+-][cC][+-][pP])
             ID="Add&Commit&Push"
             DECORATOR $ID
             ADD_ALL
             COMMIT_PUSH $2
             ;;
+        # Detect rename commit
+        [rR] | [rR][eE][nN][aA][mM][eE])
+            ID="Rename commit"
+            DECORATOR $ID
+            RENAME_COMMIT $2
+            ;; 
         *)
             echo "Usage: ./git.sh 'METHOD'"
             ;;
@@ -84,6 +91,20 @@ function COMMIT_PUSH()
 function ADD_ALL()
 {
     git add .
+}
+
+# Rename commit, ... 'git commit -amend -m' ...
+function RENAME_COMMIT()
+{
+    # Detect missing commit msg
+    if [ {"$1" != ' ' ] && [ "$1" != '' ]
+    then
+        # Proceed further - valid msg exists
+        git commit --amend -m "$1"
+    else
+        # Abort the process
+        echo "Usage: ./git.sh r 'RENAME_MSG'"
+    fi
 }
 
 # Create a decorator function
