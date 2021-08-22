@@ -117,5 +117,5 @@ $ sh git.sh con
 [stars-shield]: https://img.shields.io/github/stars/michalspano/shell-is-fun.svg?style=for-the-badge
 [stars-url]: https://github.com/michalspano/shell-is-fun/stargazers
 [ZIP]: https://github.com/michalspano/shell-is-fun/archive/refs/heads/main.zip
-[license-shield]: https://img.shields.io/github/license/michalspano/shell-is-fun.svg?style=for-the-badge
-[license-url]: https://github.com/michalspano/shell-is-fun/blob/main/LICENSE.md
+[license-shield]: https://img.shields.io/github/license/michalspano/shell-is-fun?.svg?style=for-the-badge
+[license-url]: https://github.com/michalspano/shell-is-fun/blob/main/LICENSE
