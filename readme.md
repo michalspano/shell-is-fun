@@ -1,6 +1,7 @@
 # Shell Programming - 'shell-is-fun'
 
 [![Stargazers][stars-shield]][stars-url]
+[![MIT License][license-shield]][license-url]
 
 The main objective of this repositery is to share fun shell projects and encourage others to try __shell scripting__ on their own.
 
@@ -66,7 +67,7 @@ $ sh git.sh log
 Seamlessly commits and pushes changes to a local repositery in a single command.
 
 ```Shell
-$ sh git.sh c-p $COMMIT_MESSAGE
+$ sh git.sh c-p '$COMMIT_MESSAGE'
 ```
 
 __NOTE:__ it this case, it will be assumed that changes (to be commited) have been __added__ to the __staging area__.
@@ -75,7 +76,7 @@ __NOTE:__ it this case, it will be assumed that changes (to be commited) have be
 Seamlessly adds all local changes to the staging area, commits changes and pushes changes to a local repositery in a single command.
 
 ```Shell
-$ sh git.sh a-c-p $COMMIT_MESSAGE
+$ sh git.sh a-c-p '$COMMIT_MESSAGE'
 ```
 
 __Equivalent to:__ <br>
@@ -98,7 +99,7 @@ Rename local commits using a simple command. <br>
 __Remaps__ `git commit --amend -m $RENAME_MESSAGE` to `rename $RENAME_MESSAGE`
 
 ```Shell
-$ sh git.sh r $RENAME_MESSAGE
+$ sh git.sh r '$RENAME_MESSAGE'
 ```
 
 __NOTE:__ it will assumed that a __local commit__ has been created. 
@@ -116,3 +117,5 @@ $ sh git.sh con
 [stars-shield]: https://img.shields.io/github/stars/michalspano/shell-is-fun.svg?style=for-the-badge
 [stars-url]: https://github.com/michalspano/shell-is-fun/stargazers
 [ZIP]: https://github.com/michalspano/shell-is-fun/archive/refs/heads/main.zip
+[license-shield]: https://img.shields.io/github/license/michalspano/shell-is-fun.svg?style=for-the-badge
+[license-url]: https://github.com/michalspano/shell-is-fun/blob/main/LICENSE.md
