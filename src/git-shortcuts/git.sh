@@ -54,6 +54,19 @@ function MAIN()
             DECORATOR $ID
             CONFIG
             ;;
+        # Detect untrack file option
+        [uU][nN] | [uU][nN][tT][rR][aA][cC][kK])
+            ID="Untrack"
+            DECORATOR $ID
+            UNTRACK $2
+            ;;
+
+        # Detect revert last commit
+        [rR][eE][vV] | [rR][eE][vV][eE][rR][tT])
+            ID="Revert"
+            DECORATOR $ID
+            REVERT
+            ;;
         *)
             echo "Usage: ./git.sh 'METHOD'"
             ;;
@@ -118,6 +131,33 @@ function CONFIG()
 {
     # Opens configs and their locations in vim (by default)
     git config --list --show-origin
+}
+
+# Create function to untrack file(s)
+function UNTRACK()
+{
+    # Detect if empty specified path
+    if [ "$1" == '' ] || [ "$1" == ' ' ]
+    then
+        # Abort the process
+        echo "Usage: ./git.sh un 'UNTRACK_FILE(S)'"
+    
+    # Detect if path refers to a local directory
+    elif [ -d "$1" ]
+    then
+        git rm -r --cached "$1"
+
+    # Detect if path refers to a local file
+    else
+        git rm --cached "$1"
+    fi
+}
+
+# Create a function to revert the latest commit
+function REVERT()
+{
+    # Resets the latest commit
+    git reset HEAD~
 }
 
 # Create a decorator function
