@@ -67,6 +67,11 @@ function MAIN()
             DECORATOR $ID
             REVERT
             ;;
+
+        # Temporary test function (exlude conflicting git pushes)
+        [tT] | [tT][eE][sS][tT])
+            printf "Op: $1\nMsg: $2\n"
+            ;;
         *)
             echo "Usage: ./git.sh 'METHOD'"
             ;;
@@ -174,4 +179,12 @@ function DECORATOR()
 
 }
 
-MAIN $IDENTIFIER $MSG
+# Call the main function
+if [ "$MSG" != '' ] && [ "$MSG" != ' ' ]
+then
+    # Check if msg par is not empy and assign it to the main function
+    MAIN $IDENTIFIER $MSG
+else
+    # Otherwise call the main function only with the ID of the chosen method
+    MAIN $IDENTIFIER
+fi
