@@ -1,7 +1,6 @@
 # Shell Programming - 'shell-is-fun'
 
 [![Stargazers][stars-shield]][stars-url]
-
 [![MIT License][license-shield]][license-url]
 
 The main objective of this repositery is to share fun shell projects and encourage others to try __shell scripting__ on their own.
@@ -118,5 +117,5 @@ $ sh git.sh con
 [stars-shield]: https://img.shields.io/github/stars/michalspano/shell-is-fun.svg?style=for-the-badge
 [stars-url]: https://github.com/michalspano/shell-is-fun/stargazers
 [ZIP]: https://github.com/michalspano/shell-is-fun/archive/refs/heads/main.zip
-[license-shield]: https://img.shields.io/github/license/michalspano/shell-is-fun?.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/michalspano/shell-is-fun.svg?style=for-the-badge
 [license-url]: https://github.com/michalspano/shell-is-fun/blob/main/LICENSE
